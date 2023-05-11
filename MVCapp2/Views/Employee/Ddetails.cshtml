@@ -1,0 +1,54 @@
+﻿@model MVCapp2.ViewModels.EmployeesDetail
+
+@{
+    Layout = null;
+}
+<html>
+<head>
+    <title>@Model.PageTitle</title>
+</head>
+<body>
+    <h1>@Model.PageHeader</h1>
+   <table>
+       <tr>
+           <th>EmployeeId</th>
+           <th>Name</th>
+           <th>Gender</th>
+           <th>Deartment</th>
+           <th>Salary</th>
+           <th>AddressId</th>
+       </tr>
+       @foreach(var emp in Model.Employee)
+            {
+       <tr>
+           <td> @emp.EmployeeId</td>
+           <td>@emp.Name</td>
+           <td>@emp.Gender</td>
+           <td>@emp.Department</td>
+           <td>@emp.Salary</td>
+           <td>@emp.AddressId</td>
+       </tr>
+           
+            }
+   </table>
+    <table>
+        <tr>
+            <th>AddressId</th>
+            <th>Country</th>
+            <th>State</th>
+            <th>City</th>
+            <th>Pin</th>
+        </tr>
+        @foreach(var emp in Model.Address)
+            {
+            <tr>
+                <td>@emp.AddressId</td>
+                <td>@emp.Country</td>
+                <td>@emp.State</td>
+                <td>@emp.City</td>
+                <td>@emp.Pin</td>
+            </tr>
+            }
+    </table>
+</body>
+</html>
